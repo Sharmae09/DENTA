@@ -1,8 +1,8 @@
 <template>
-  <!-- <AdminCalendar /> -->
-  <!-- <AppointmentForm /> -->
   <LoginForm />
-  <!-- <ClientForm /> -->
+  <AdminCalendar />
+  <AppForm />
+  <AppFormDate />
 </template>
 
 <script setup>
