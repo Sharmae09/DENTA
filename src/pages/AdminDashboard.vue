@@ -1,7 +1,7 @@
 <template>
   <!-- <LoginForm /> -->
-  <AdminCalendar />
-  <!-- <AppForm /> -->
+  <!-- <AdminCalendar /> -->
+  <AppForm />
 </template>
 
 <script setup>

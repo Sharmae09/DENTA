@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     async getEvents({ start, end }) {
-      const eventsCollection = collection(db, "cal-events");
+      const eventsCollection = collection(db, "appointment");
       const snapshots = await getDocs(eventsCollection);
       const events = [];
 
@@ -89,7 +89,9 @@ export default {
 
         // Ensure your Firestore data has 'Name' and 'Start' fields
         const eventTitle = appData.Name || "Untitled Event";
-        const eventStart = appData.Start ? new Date(appData.Start) : new Date();
+        const eventStart = appData.selectedDate
+          ? appData.selectedDate.toDate()
+          : new Date();
         const eventEnd = appData.End
           ? new Date(appData.End)
           : new Date(eventStart.getTime() + 2 * 3600000); // Default to 2 hours duration if 'End' is missing
